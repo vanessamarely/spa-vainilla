@@ -1,11 +1,18 @@
-function showHome() {
-  document.querySelector('#home').style.display = 'block';
-  document.querySelector('#about').style.display = 'none';
+
+function showNavigationTemplate(){
+  const navigationTemplate = 
+  '<ul>  <li>  <button onclick="showPage()">Home <i class="fa fa-home" aria-hidden="true"></i></button>   </li> <li> <button onclick="showPage(2)">About <i class="fa fa-user" aria-hidden="true"></i></button> </li> </ul>',
+  menu = document.getElementById('menu');
+  menu.innerHTML = navigationTemplate;
 }
 
-function showAbout() {
-  document.querySelector('#home').style.display = 'none';
-  document.querySelector('#about').style.display = 'block';
+function showPage(page = ''){
+  if(page === '') {
+    window.location.href = 'index.html';
+  }else{
+    window.location.href = 'about.html';
+  }
 }
 
-showHome();
+
+showNavigationTemplate();
